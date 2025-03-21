@@ -1,0 +1,19 @@
+cd ~
+touch ${USER}_part3.log
+mkdir -p D1/D2/D3
+touch file.txt
+echo zxc >> file.txt
+ln -s ./file.txt D3/symlink
+ln file.txt D3/hardlink
+cat hardlink
+cat symlink
+mv D1/D2/file.txt D1/
+cat D1/D2/D3/symlink
+cat D1/D2/D3/hardlink
+rm -r D1/D2
+find / -type f -size +50M > eltex-pg2-v16_part3_gt50M.log 2>/dev/null
+du -h /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+find ~ -type f -mtime -1
+which find
+file /usr/bin/find
+file /boot/initrd.img*
