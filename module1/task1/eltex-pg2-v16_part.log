@@ -1,0 +1,848 @@
+   10  ls
+   11  cd ..
+   12  cd ~
+   13  ls -l
+   14  man -Lru man
+   15  export LANG=ru_RU.UTF8
+   16  help
+   17  echo "export LANG=ru_RU.UTF8" >>~/.bashrc
+   18  help
+   19  ls --help
+   20  ls
+   21  w
+   22  whoami
+   23  screen
+   24  screen -ls
+   25  screen -X -S 92051.pts-29.eltex quit
+   26  screen -ls
+   27  screen -X -S 93807.pts-29.eltex quit
+   28  screen -X -S 93130.pts-29.eltex quit
+   29  screen -X -S 94130.pts-29.eltex quit
+   30  screen -ls
+   31  screen -S top
+   32  screen -ls
+   33  screen -S top
+   34  screen -ls
+   35  screen -r top
+   36  screen -ls
+   37  screen -X -S 105124.top quit
+   38  screen -ls
+   39  screen -r top
+   40  screen -ls
+   41  screen -X -S 115551.top quit
+   42  screen -ls
+   43  screen -r 101604.top
+   44  screen new
+   45  screen -S new
+   46  vi report_part1.txt
+   47  ls
+   48  vi report_part1.txt
+   49  ls
+   50  cat report_part1.txt 
+   51  screen -ls
+   52  screen -X -S 130099.new
+   53  screen -X -S 130099.new quit
+   54  top
+   55  watch /usr/bin/vmstat
+   56  w
+   57  screen -ls
+   58  screen 130099.new
+   59  screen -ls
+   60  screen -r 130099.new
+   61  screen -SX-S 101604.new quit
+   62  screen -X -S 101604.new quit
+   63  screen -ls
+   64  screen -X -S 101604.top quit
+   65  screen -X -S 94827.pts-29.eltex quit
+   66  screen -ls
+   67  screen пользователь в системе_part2
+   68  screen -S пользователь в системе_part2
+   69  screen -S user
+   70  screen ls
+   71  screen -ls
+   72  screen -X -S 166094.user
+   73  screen -X -S 166094.user quit
+   74  screen -ls
+   75  screen -S UserInSystem_part2
+   76  screen -S UserIn System_part2
+   77  screen -ls
+   78  screen -r UserInSystem_part2 
+   79  ls
+   80  screen -ls
+   81  screen -X 
+   82  top
+   83  screen -X -S 1092901.scr quit
+   84  screen -ls
+   85  ls -l
+   86  ;s
+   87  ls
+   88  compgen -c ls
+   89  compgen -v HIST
+   90  echo $HISTSIZE
+   91  ls -d ~/.*  
+   92  HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
+   93  ls
+   94  history | tail -n 5
+   95  xauth 2>/dev/null
+   96  ls
+   97  history 5
+   98  history
+   99  echo $HISTSIZE
+  100  history | tail -n 5
+  101  history
+  102  ls
+  103  cat eltex-pg2-v16_part.log
+  104  history > eltex-pg2-v16_part.log
+  105  cat eltex-pg2-v16_part.log
+  106  cat eltex-pg2-v16_part.log
+  107  ls
+  108  history 
+  109  history > eltex-pg2-v16_part.log
+  110  [200~df -h
+  111  ~df -h
+  112  df -h
+  113  history > eltex-pg2-v16_part.log
+  114  df -h
+  115  screen -ls
+  116  screen -s
+  117  screen -ls
+  118  screen -s screentest
+  119  screen -s sc
+  120  screen -S scr
+  121  screen -ls
+  122  screen -r scr
+  123  ls
+  124  history > eltex-pg2-v16_part.log
+  125  cat eltex-pg2-v16_part.log
+  126  history
+  127  history 5
+  128  HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
+  129  cat report_part1.txt 
+  130  history > eltex-pg2-v16_part.log
+  131     grep "ls" ~/.bash_history   
+  132  echo $HISTSIZE
+  133  history > eltex-pg2-v16_part.log
+  134  history >> eltex-pg2-v16_part.log
+  135  screen ls
+  136  screen -ls
+  137  screen -r history > eltex-pg2-v16_part.log
+  138  screen -ls
+  139  screen -r 168281.UserInSystem_part2
+  140  touch "$USER_part.log"
+  141  ls
+  142  ls -l
+  143  ls -a
+  144  touch $USER_part.log
+  145  ls -a
+  146  ls
+  147  touch USER_part.log
+  148  ls
+  149  rm USER_part.log 
+  150  screen -ls
+  151  touch $USER_part.log
+  152  ls
+  153  history > $USER_part.log
+  154  ls
+  155  */10 * * * * history > $HOME/$USER_part.log 2>&1
+  156  cat $USER_part.log
+  157  cat USER_part.log
+  158  history 
+  159  history > ${USER}_part.log
+  160  ls
+  161  set
+  162  set | grep ^hist
+  163  compgen -v hist*
+  164  $HIST
+  165  history
+  166  screen -ls
+  167  ls
+  168  screen -ls
+  169  screen UserInSystem_part2
+  170  cat eltex-pg2-v16_part.log
+  171  screen -ls
+  172  screen UserInSystem_part2
+  173  screen -ls
+  174  screen UserInSystem_part2
+  175  screen -ls
+  176  ls
+  177  car eltex-pg2-v16_part.log 
+  178  cat eltex-pg2-v16_part.log 
+  179  history 
+  180  history > eltex-pg2-v16_part.log
+#1741796386
+export HISTFILE=~/eltex-pg2-v16_part.log
+#1741796391
+echo "Тест"
+#1741796404
+cat eltex-pg2-v16_part.log | tail -n 5
+#1741796442
+cat eltex-pg2-v16_part.log 
+#1741796612
+echo 'export HISTFILE=~/eltex-pg2-v16_part.log' >> ~/.bash_profile
+#1741796616
+echo 'shopt -s histappend' >> ~/.bash_profile
+#1741796622
+echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "' >> ~/.bash_profile
+#1741796626
+echo 'export PROMPT_COMMAND="history -a"' >> ~/.bash_profile
+#1741796631
+source ~/.bash_profile
+#1741796637
+screen -ls
+#1741796675
+cat eltex-pg2-v16_part.log 
+#1741796742
+echo "$HISTTIMEFORMAT"
+#1741796752
+history | tail -n 5
+#1741796767
+echo 'export HISTFILE=~/eltex-pg2-v16_part.log' >> ~/.bashrc
+#1741796770
+echo 'shopt -s histappend' >> ~/.bashrc
+#1741796774
+echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "' >> ~/.bashrc
+#1741796786
+echo 'export PROMPT_COMMAND="history -a"' >> ~/.bashrc
+#1741796790
+source ~/.bashrc
+#1741796804
+echo "Тест"
+#1741796806
+tail -n 10 ~/eltex-pg2-v16_part.log
+#1741796876
+bash
+#1741797103
+screen UserInSystem_part2
+#1741797182
+ls
+#1741797329
+quit
+#1741797334
+loout
+#1741797336
+logout
+#1741797338
+exit
+#1741797173
+screen -S UserInSystem_part2
+#1741797341
+exit
+#1741797407
+printenv | grep ^HIST
+#1741797421
+echo $HIST<TAB><TAB>
+#1741797427
+echo $HIST
+#1741797440
+cat eltex-pg2-v16_part.log 
+#1741797485
+ compgen -v hist*
+#1741797491
+compgen -v HIST
+#1741797501
+screen -r 
+#1741797504
+screen -ls
+#1741797556
+screen -S UserInSystem2
+#1741797581
+screen -ls
+#1741797592
+exit
+#1741797658
+screen -ls
+#1741797670
+screen -S UserInSystem_part2
+#1741797677
+screen -ls
+#1741797680
+exit
+#1741797698
+screen -ls
+#1741797764
+screen -x 914.UserInSystem_part2 quit
+#1741797782
+history 
+#1741797791
+screen -X 914.UserInSystem_part2 quit
+#1741797826
+screen -X kill 914.UserInSystem_part2
+#1741798066
+screen -X -S 914.UserInSystem_part2
+#1741798069
+screen -X -S 914.UserInSystem_part2 quit
+#1741798071
+screen -ls
+#1741798087
+pwd
+#1741798084
+screen -r UserInSystem2
+#1741798130
+echo 'export HISTFILE=~/eltex-pg2-v16_part.log' >> ~/.bashrc
+#1741798133
+echo 'shopt -s histappend' >> ~/.bashrc
+#1741798137
+echo 'export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "' >> ~/.bashrc
+#1741798140
+echo 'export PROMPT_COMMAND="history -a"' >> ~/.bashrc
+#1741798142
+source ~/.bashrc
+#1741798109
+screen -r UserInSystem2
+#1741798174
+screen -ls
+#1741798183
+history 
+#1741798232
+cat eltex-pg2-v16_part.log 
+#1741798257
+echo "zcx"
+#1741798259
+cat eltex-pg2-v16_part.log 
+#1741798331
+echo "zxc"
+#1741798339
+cat eltex-pg2-v16_part.log  | tail -n 5
+#1741798571
+export HISTTIMEFORMAT='%Y-%m-%d %H:%M:%S '
+#1741798575
+history
+#1741798579
+cat eltex-pg2-v16_part.log  | tail -n 5
+#1741798178
+screen -r  UserInSystem2 
+#1741798594
+source ~/.bashrc
+#1741798596
+history
+#1741798601
+cat eltex-pg2-v16_part.log  | tail -n 5
+#1741798591
+screen -r UserInSystem2
+#1741798662
+export PROMPT_COMMAND='echo "$(date "+%Y-%m-%d %H:%M:%S") $(history 1)" >> ~/eltex-pg2-v16_part.log
+ls
+s
+s
+s
+a
+a
+#1741798736
+echo "zxc"
+#1741798742
+cat eltex-pg2-v16_part.log  | tail -n 5
+#1741798876
+date
+#1741798905
+ды
+#1741798906
+ls
+#1741799011
+export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
+#1741799018
+export PROMPT_COMMAND='history -a; history 1 >> ~/eltex-pg2-v16_part.log'
+  243  2025-03-13 00:03:38 export PROMPT_COMMAND='history -a; history 1 >> ~/eltex-pg2-v16_part.log'
+#1741799022
+source ~/.bashrc
+#1741799031
+echp "zcx"
+#1741799036
+echo "zxc"
+#1741799047
+cat eltex-pg2-v16_part.log | tail -n 5
+#1741799251
+mkdir -p ~/{$(date +%Y)}-{01..12}
+#1741799255
+ls
+#1741799301
+rmdir -p ~/{$(date +%Y)}-{01..12}
+#1741799307
+ls
+#1741799485
+bash --version
+#1741799577
+for m in {01..12}; do mkdir -p "$HOME/$(date +%Y)-$m"; done
+#1741799579
+ls
+#1741798679
+screen -r UserInSystem2
+#1741799604
+screen -r UserInSystem2
+#1741836451
+screen -ls
+#1741836493
+св
+#1741836494
+cd
+#1741836501
+pwd
+#1741836509
+cd /home
+#1741836511
+ls
+#1741836533
+cd eltex-pg1-v12
+#1741836537
+ls
+#1741836545
+cd D1
+#1741836546
+ls
+#1741836551
+cd D2
+#1741836564
+cd ..
+#1741836567
+cd ..
+#1741836567
+cd ..
+#1741836569
+cd ..
+#1741836572
+ls
+#1741836578
+cd /home
+#1741836578
+ls
+#1741836587
+/cd eltex-pg1-v16
+#1741836593
+cd eltex-pg1-v16
+#1741836599
+ls
+#1741836611
+cd eltex-pg2-v16
+#1741836617
+cd ..
+#1741836618
+cd ..
+#1741836620
+cd eltex-pg2-v16
+#1741836626
+ls
+#1741836636
+cd ~
+#1741836637
+ls
+#1741836655
+touch ${USER}_part3.log
+#1741836656
+ls
+#1741836709
+echo "cd ~" >> ${USER}_part3.log
+#1741836718
+echo "touch \${USER}_part3.log" >> ${USER}_part3.log
+#1741836727
+cat eltex-pg2-v16_part3.log 
+#1741836741
+mkdir -p D1/D2/D3
+#1741836748
+echo "mkdir -p D1/D2/D3" >> ${USER}_part3.log
+#1741836755
+cd d1
+#1741836757
+cd D1
+#1741836760
+cd D2
+#1741836765
+touch D1/D2/file.txt
+#1741836778
+touch file.txt
+#1741836779
+ls
+#1741836793
+echo "touch file.txt" >> ${USER}_part3.log
+#1741836826
+echo > "zxc" >> eltex-pg2-v16_part3.log 
+#1741836831
+cat eltex-pg2-v16_part3.log 
+#1741836878
+ls
+#1741836891
+cd zxc
+#1741836894
+cd ..
+#1741836898
+cd D2
+#1741836903
+rm zxc
+#1741836906
+rm eltex-pg2-v16_part3.log 
+#1741836907
+ls
+#1741836945
+echo "zxc" >> file.txt
+#1741836955
+cd ~
+#1741836966
+echo "zxc" >> file.txt
+#1741836996
+echo "echo "zxc" >> file.txt" eltex-pg2-v16_part3.log
+#1741837007
+echo "echo "zxc" >> file.txt" >> eltex-pg2-v16_part3.log
+#1741837019
+ls
+#1741837024
+rm file.txt 
+#1741837032
+cat eltex-pg2-v16_part3.log 
+#1741837161
+history 
+#1741837224
+sed -i '$i touch file.txt' eltex-pg2-v16_part3.log
+#1741837229
+cat eltex-pg2-v16_part3.log 
+#1741837886
+cd D1/
+#1741837889
+cd D2
+#1741837889
+ls
+#1741837913
+ln -s ../file.txt D1/D2/D3/symlink
+#1741837941
+ln -s D1/D2/file.txt D1/D2/D3/symlink.txt
+#1741837947
+ln -s D1/D2/file.txt D1/D2/D3/symlink
+#1741837982
+ls
+#1741838034
+ln -s ./file.txt D3/symlink
+#1741838047
+ls -l D3/symlink
+#1741838060
+cat D3/symlink
+#1741838106
+cd D3
+#1741838107
+ls
+#1741838111
+cat symlink 
+#1741838160
+ln D1/D2/file.txt D1/D2/D3/hardlink
+#1741838171
+cd ..
+#1741838181
+ln file.txt D1/D2/D3/hardlink
+#1741838187
+ln ../file.txt D1/D2/D3/hardlink
+#1741838232
+cd D3
+#1741838235
+ln ../file.txt D1/D2/D3/hardlink
+#1741838263
+cd ..
+#1741838265
+ls
+#1741838271
+ln file.txt D1/D2/D3/hardlink
+#1741838280
+ls
+#1741838321
+cd ~
+#1741838339
+echo "ln -s ./file.txt D3/symlink" >> eltex-pg2-v16_part3.log 
+#1741838347
+cat eltex-pg2-v16_part | tail -n 3
+#1741838352
+cat eltex-pg2-v16_part3.log | tail -n 3
+#1741838358
+cd D1
+#1741838360
+cd D2
+#1741838405
+ln file.txt D3/hardlink
+#1741838414
+ls -l D3/
+#1741838464
+cat D3/hardlink
+#1741838498
+cd ~
+#1741838502
+cat eltex-pg2-v16_part3.log 
+#1741838522
+echo "ln file.txt D3/hardlink" >> eltex-pg2-v16_part3.log 
+#1741838557
+cd D1/D2/D3
+#1741838561
+cat D3/hardlink
+#1741838566
+cat hardlink
+#1741838572
+cat symlink 
+#1741838577
+cd ~
+#1741838607
+echo "cat hardlink" eltex-pg2-v16_part3.log 
+#1741838619
+echo "cat hardlink" >> eltex-pg2-v16_part3.log 
+#1741838631
+echo "cat symlink" >> eltex-pg2-v16_part3.log 
+#1741838654
+mv D1/D2/file.txt D1/
+#1741838658
+cd D`
+cd D1
+ls
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+exit
+ls
+
+
+
+
+
+
+:q!
+#1741838727
+ls
+#1741838731
+cd D1
+#1741838732
+ls
+#1741838780
+cd ~~
+#1741838782
+cd ~
+#1741838792
+echo "mv D1/D2/file.txt D1/" >> eltex-pg2-v16_part3.log 
+#1741838856
+cat eltex-pg2-v16_part3.log 
+#1741838882
+cat D1/D2/D3/symlink
+#1741838959
+cat D1/D2/D3/hardlink 
+#1741838979
+echo "cat D1/D2/D3/symlink" >> ./eltex-pg2-v16_part3.log 
+#1741838990
+echo "cat D1/D2/D3/hardlink" >> ./eltex-pg2-v16_part3.log 
+#1741839021
+rm -r D1/D2
+#1741839026
+cd D1
+#1741839028
+ls
+#1741839056
+echo "rm -r D1/D2" >> ../eltex-pg2-v16_part3.log 
+#1741839064
+cat ../eltex-pg2-v16_part3.log 
+#1741839158
+find / -type f -size +50M > ${USER}_part3_gt50M.log 2>/dev/null
+#1741839160
+ls
+#1741839170
+rm eltex-pg2-v16_part3_gt50M.log 
+#1741839171
+cd ~
+#1741839176
+find / -type f -size +50M > ${USER}_part3_gt50M.log 2>/dev/null
+#1741839217
+echo "find / -type f -size +50M > ${USER}_part3_gt50M.log 2>/dev/null" >> eltex-pg2-v16_part3.log
+#1741839342
+ls -lh
+#1741839353
+ls -lh eltex-pg2-v16_part3.log 
+#1741839389
+while read -r file; do ls -lh "$file"; done < eltex-pg2-v16_part.log
+#1741839448
+cat eltex-pg2-v16_part3_gt50M.log
+#1741839591
+ls -l /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+#1741839644
+du -h /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+#1741839735
+cat /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+#1741839831
+du -h /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+#1741839871
+echo "du -h /home/eltex-pg2-v23/eltex-pg2-v23_part.log" >> eltex-pg2-v16_part3.log 
+#1741839989
+find ~ -type f -mtime -1
+#1741840014
+echo "find ~ -type f -mtime -1" >> eltex-pg2-v16_part3.log 
+#1741840015
+ls
+#1741840086
+which find
+#1741840102
+echo "which find" >> eltex-pg2-v16_part3.log 
+#1741840115
+file /usr/bin/find
+#1741840138
+echo "file /usr/bin/find" >> eltex-pg2-v16_part3.log 
+#1741840146
+file /boot/initrd.img
+#1741840151
+file /boot/initrd.img*
+#1741840174
+echo "file /boot/initrd.img*" >> eltex-pg2-v16_part3.log 
+#1741856563
+du -h /home/eltex-pg2-v23/eltex-pg2-v23_part.log
+#1741857041
+ssh 
+#1741857048
+ssh  --hel[
+#1741857050
+ssh  --help
+#1741857147
+ssh 172.16.9.216
+#1741857465
+ssh -l root 172.16.9.216
+#1741858575
+ls
+#1741858603
+ssh-keygen -t rsa -b 4096 -C "Practice2"
+#1741858620
+ls
+#1741858759
+ssh -l root 172.16.9.216
+#1741859069
+scp key.pub root@eltex-practice2-pg2-v16:/home
+#1741859150
+scp key.pub root@172.16.9.216:/home
+#1741859194
+ssh 172.16.9.216
+#1741859209
+4
+#1741859223
+ssh -l root 172.16.9.216
+#1741859411
+ssh-copy-id -i key.pub root@172.16.9.216
+#1741859436
+ssh -l root 172.16.9.216
+#1741859799
+cat key.pub 
+#1741859824
+ssh-copy-id -i key.pub root@172.16.9.216
+#1741859843
+ssh -l root 172.16.9.216
+#1741859987
+ls -l
+#1741860030
+sh -l root 172.16.9.216
+#1741860039
+ssh -l root 172.16.9.216
+#1741860990
+ssh -l root 172.16.9.216
+#1741862818
+cat eltex-pg2-v16_part3.log | tail -n 15
+#1741862836
+cat eltex-pg2-v16_part.log | tail -n 15
+#1741862876
+ssh -l root 172.16.9.216
+#1742199588
+bash --version
+#1742199648
+ssh -l root 172.16.9.216
+#1742205782
+ssh -l root 172.16.9.216
+#1742209523
+ls -l
+#1742209537
+ssh -l root 172.16.9.216
+#1742215659
+ls
+#1742215666
+ssh -l root 172.16.9.216
+#1742215907
+ssh -l root 172.16.9.216
+#1742232153
+exit
+#1742235708
+ssh -l root 172.16.9.216
+#1742238968
+ssh -l root 172.16.9.216
+#1742575045
+ssh -l root 172.16.9.216
+#1742580489
+ls
+#1742580507
+cp eltex-pg2-v8_part* root@172.16.9.216:~/Eltex_School/module1/task1
+#1742580581
+cp eltex-pg2-v16_part* root@172.16.9.216:~/Eltex_School/module1/task1
+#1742580584
+cp eltex-pg2-v16_part* root@172.16.9.216:~/Eltex_School/module1/task1
+#1742580638
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/Eltex_School/module1/task1
+#1742580662
+cp eltex-pg2-v16_part* root@172.16.9.208:~/Eltex_School/module1/task1
+#1742580676
+cp eltex-pg2-v16_part* root@172.16.9.208:
+#1742580680
+cp eltex-pg2-v16_part* root@172.16.9.208
+#1742580685
+cp eltex-pg2-v16_part* root@172.16.9.208:/
+#1742580687
+cp eltex-pg2-v16_part* root@172.16.9.208:~/
+#1742580744
+ssh-copy-id -i el root@172.16.9.216
+#1742580766
+ssh -l root 172.16.9.216
+#1742580820
+cp eltex-pg2-v16_part* root@172.16.9.208:/root/module1/task1
+#1742580867
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580926
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580929
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580929
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580929
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580930
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580930
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580943
+cp eltex-pg2-v16_part3.log root@172.16.9.216:/root/module1/task1
+#1742580948
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742580996
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742581017
+cp root@172.16.9.216:/root/module1/task1  eltex-pg2-v16_part*
+#1742581026
+mc
+#1742581051
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1
+#1742581061
+cp eltex-pg2-v16_part* root@172.16.9.216
+#1742581085
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/module1/task1/1.log
+#1742581143
+cp eltex-pg2-v16_part* root@172.16.9.216:/Eltex_School/module1/task1/1.log
+#1742581148
+cp eltex-pg2-v16_part* root@172.16.9.216:/root/Eltex_School/module1/task1/1.log
+#1742581154
+ssh -l root 172.16.9.216
+#1742581365
+cp eltex-pg2-v16_part* root@172.16.9.216:/Eltex_School/module1/task1
