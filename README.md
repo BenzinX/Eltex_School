@@ -1,32 +1,19 @@
 Repository for storing work from Eltex School
-# Project
+# This repository is made for compliting tasks from eltex school 2025
+## Module 1- OS Linux/Bash:
+> [Practice 1](https://github.com/Neyro0464/Eltex_School/tree/main/module1/practice1 "Путь к директории в репозитории")   
+>> task 1  
+>> task 2  
+>> task 3
 
-## Описание
-Этот проект содержит материалы
+> [Practice 2](https://github.com/Neyro0464/Eltex_School/tree/main/module1/practice2 "Путь к директории в репозитории")  
+>> task 1  
+>> task 2  
+>> task 3  
 
----
+> [Practice 3](https://github.com/Neyro0464/Eltex_School/tree/main/module1/practice3 "Путь к директории в репозитории")
+>> task 1
+>> task 2
 
-## Practice 1
-
-### Файлы:
-- [Folder1/File1](folder1/file1.txt)
-- [Folder1/File2](folder1/file2.txt)
-- [Folder1/File3](folder1/file3.txt)
-
----
-
-## Practice 2
-
-### Файлы:
-- [Folder2/File1](folder2/file1.txt)
-- [Folder2/File2](folder2/file2.txt)
-- [Folder2/File3](folder2/file3.txt)
-
----
-
-## Practice 3
-
-### Файлы:
-- [Folder3/File1](folder3/file1.txt)
-- [Folder3/File2](folder3/file2.txt)
-- [Folder3/File3](folder3/file3.txt)
+## Module 2 - Objective C:
+...
