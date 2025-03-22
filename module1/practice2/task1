@@ -1,0 +1,189 @@
+1
+root@eltex-practice2-pg2-v16:~# ssh-keygen -t rsa -b 4096 -C "Ptactice2"                 Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): key
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in key
+Your public key has been saved in key.pub
+2
+eltex-pg2-v16@eltex:~$ ssh-copy-id -i key.pub root@172.16.9.216
+/usr/bin/ssh-copy-id: INFO: Source of key(s) to be installed: "key.pub"
+/usr/bin/ssh-copy-id: INFO: attempting to log in with the new key(s), to filter out any that are already installed
+/usr/bin/ssh-copy-id: INFO: 1 key(s) remain to be installed -- if you are prompted now it is to install the new keys
+root@172.16.9.216's password:
+
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'root@172.16.9.216'"
+and check to make sure that only the key(s) you wanted were added.
+                      100%  735     1.5MB/s   00:00
+3
+eltex-pg2-v16@eltex:~$ cat key.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDSRz5gsIQ8CNbhMD5B1NKtXzWijbfKZHX610ofZY1pnH58E5XliphCgHYr7pj8uxcKvXy7VMiwosmV91CSwZ2Iu0H7gnHqWY7Z42K9scdv01hkFlhT9xMUDD450XpnLYEtgEV66+M6DsUTjO05sgplPPCgHHohhLH//ipRnwlvA2zRRd8KxfWX4AnVba+hcPIv39sTgVvzb8fOhjTT/mkf38brSw8Tyo0ohBCENvbgfIwlZIEig/w012E/QOwknQn4tCn/odi62ywSKuo7E7p9gnZpSiBkyGOgftmpbxNbgCY1OV3DkEvKmm1SSUzrn7c1oWjCp2eNz/Ne6azkE1l6+sX49vdfm3fOs5Bs1fNhsNqrzD+piU7bHY+7g2J52gGGehXG7twWjdsFi8dcd7jAG+y53mXiyMbOWPgNExmQePSvVkzlEVPQhh16MHRD7gJJjqzkid+M6ptgmUdciytSUJZX9nBt+rW/e+x3dZZq2Tq8Sj3lFBIPe9msU+o+1qZxFIcs+jIc4kW27p2v/gZgOxKKFi3f+7pkQv7jBe4v29ovj2ubz5DsuyyVQBxCykOKvEAFfon/fx6hjVGt+FD7PCqrMyrRVwevlFes4JM6W4oZ5Yp0GaAMqxH4vOZYflCATRtUXRBz6rbXfTQ/X1pdZonVWrg9U53pMfEOdhjb4w== Practice2
+
+root@eltex-practice2-pg2-v16:~# cat .ssh/authorized_keys
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDSRz5gsIQ8CNbhMD5B1NKtXzWijbfKZHX610ofZY1pnH58E5XliphCgHYr7pj8uxcKvXy7VMiwosmV91CSwZ2Iu0H7gnHqWY7Z42K9scdv01hkFlhT9xMUDD450XpnLYEtgEV66+M6DsUTjO05sgplPPCgHHohhLH//ipRnwlvA2zRRd8KxfWX4AnVba+hcPIv39sTgVvzb8fOhjTT/mkf38brSw8Tyo0ohBCENvbgfIwlZIEig/w012E/QOwknQn4tCn/odi62ywSKuo7E7p9gnZpSiBkyGOgftmpbxNbgCY1OV3DkEvKmm1SSUzrn7c1oWjCp2eNz/Ne6azkE1l6+sX49vdfm3fOs5Bs1fNhsNqrzD+piU7bHY+7g2J52gGGehXG7twWjdsFi8dcd7jAG+y53mXiyMbOWPgNExmQePSvVkzlEVPQhh16MHRD7gJJjqzkid+M6ptgmUdciytSUJZX9nBt+rW/e+x3dZZq2Tq8Sj3lFBIPe9msU+o+1qZxFIcs+jIc4kW27p2v/gZgOxKKFi3f+7pkQv7jBe4v29ovj2ubz5DsuyyVQBxCykOKvEAFfon/fx6hjVGt+FD7PCqrMyrRVwevlFes4JM6W4oZ5Yp0GaAMqxH4vOZYflCATRtUXRBz6rbXfTQ/X1pdZonVWrg9U53pMfEOdhjb4w== Practice2
+Права доступа:
+eltex-pg2-v16@eltex:~$ ls -l
+-rw-r--r-- 1 eltex-pg2-v16 eltex-pg2-v16   735 Mar 13 16:36 key.pub
+
+root@eltex-practice2-pg2-v16:~# ls -l .ssh/
+total 4
+-rw------- 1 root root 735 Mar 13 09:50 authorized_keys
+
+Права доступа и содержимое совпали
+
+4
+root@eltex-practice2-pg2-v16:~# sudo useradd -m -s /bin/bash user1
+
+root@eltex-practice2-pg2-v16:~# sudo passwd user1
+New password:
+Retype new password:
+passwd: password updated successfully
+root@eltex-practice2-pg2-v16:~# su user1
+user1@eltex-practice2-pg2-v16:/root$ ls -a
+
+user1@eltex-practice2-pg2-v16:~$ cat /etc/passwd | grep user1
+user1:x:1001:1001::/home/user1:/bin/bash
+
+5
+
+root@eltex-practice2-pg2-v16:~# adduser user2
+info: Adding user `user2' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user2' (1002) ...
+info: Adding new user `user2' (1002) with group `user2 (1002)' ...
+info: Creating home directory `/home/user2' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user2
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+info: Adding new user `user2' to supplemental / extra groups `users' ...
+info: Adding user `user2' to group `users' ...
+root@eltex-practice2-pg2-v16:~# adduser user3
+info: Adding user `user3' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `user3' (1003) ...
+info: Adding new user `user3' (1003) with group `user3 (1003)' ...
+info: Creating home directory `/home/user3' ...
+info: Copying files from `/etc/skel' ...
+New password:
+Retype new password:
+passwd: password updated successfully
+Changing the user information for user3
+Enter the new value, or press ENTER for the default
+        Full Name []:
+        Room Number []:
+        Work Phone []:
+        Home Phone []:
+        Other []:
+Is the information correct? [Y/n] y
+info: Adding new user `user3' to supplemental / extra groups `users' ...
+info: Adding user `user3' to group `users' ...
+6
+
+root@eltex-practice2-pg2-v16:~# man usermod
+root@eltex-practice2-pg2-v16:~# sudo usermod -s /usr/sbin/nologin user3
+root@eltex-practice2-pg2-v16:~# su user3
+This account is currently not available.
+
+root@eltex-practice2-pg2-v16:/su user3 -s /bin/bash
+user3@eltex-practice2-pg2-v16:/root$
+
+user3@eltex-practice2-pg2-v16:/root$ exit
+exit
+
+7
+root@eltex-practice2-pg2-v16:~# groupadd user_group
+
+root@eltex-practice2-pg2-v16:~# groups user1
+user1 : user1 user_group
+root@eltex-practice2-pg2-v16:~# groups user2
+user2 : user2 users user_group
+root@eltex-practice2-pg2-v16:~# groups user3
+user3 : user3 users user_group
+
+9
+root@eltex-practice2-pg2-v16:~# mkdir -p /opt/share
+root@eltex-practice2-pg2-v16:~# chown :user_group /opt/share
+root@eltex-practice2-pg2-v16:~# chmod 2770 /opt/share
+
+
+10
+root@eltex-practice2-pg2-v16:~# umask 006 >> /home/user1/.bashrc
+
+11
+root@eltex-practice2-pg2-v16:~# -u user1 touch /opt/share/file_user1;sudo -u user2 touch /opt/share/file_user2
+
+root@eltex-practice2-pg2-v16:~# -u user1 rm -f /opt/share/file_user2
+root@eltex-practice2-pg2-v16:~# -u user2 rm -f /opt/share/file_user1
+root@eltex-practice2-pg2-v16:~# cd /opt/share/
+root@eltex-practice2-pg2-v16:/opt/share# ls
+root@eltex-practice2-pg2-v16:/opt/share#
+
+12
+sudo chmod +t /opt/share
+
+root@eltex-practice2-pg2-v16:/opt/share# sudo -u user1 rm -f /opt/share/file_user2
+rm -f /sudo -u user2 rm -f /rm: cannot remove '/opt/share/file_user2': Operation not permitted
+root@eltex-practice2-pg2-v16:/opt/share# sudo -u user2 rm -f /opt/share/file_user1
+rm: cannot remove '/opt/share/file_user1': Operation not permitted
+13
+root@eltex-practice2-pg2-v16:~# sudo bash -c 'echo "user1 ALL=(ALL) NOPASSWD: /bin/dmesg" >> /etc/sudoers'
+
+root@eltex-practice2-pg2-v16:~# bash -c 'echo -e "#!/bin/bash\ndmesg" > /usr/local/bin/dmesg_suid'
+root@eltex-practice2-pg2-v16:~# chmod +x /usr/local/bin/dmesg_suid
+root@eltex-practice2-pg2-v16:~# chown root:user2 /usr/local/bin/dmesg_suid
+root@eltex-practice2-pg2-v16:~# chmod 4750 /usr/local/bin/dmesg_suid
+
+14
+root@eltex-practice2-pg2-v16:~# sudo chage -M 10 user1
+root@eltex-practice2-pg2-v16:~# sudo chage -M 10 user2
+root@eltex-practice2-pg2-v16:~# sudo chage -M 10 user3
+
+15
+root@eltex-practice2-pg2-v16:~# echo "Кирилл Леонтьев" > /etc/motd
+root@eltex-practice2-pg2-v16:~# cat /etc/motd | tail -n 5
+Кирилл Леонтьев
+16
+root@eltex-practice2-pg2-v16:~# rsync -a /etc/ /root/etc_backup/
+
+17
+root@eltex-practice2-pg2-v16:~# tar -czf /root/etc_backup.tar.gz -C /root etc_backup
+root@eltex-practice2-pg2-v16:~# tar -cjf /root/etc_backup.tar.bz2 -C /root etc_backup
+root@eltex-practice2-pg2-v16:~# 7z a /root/etc_backup.7z /root/etc_backup
+root@eltex-practice2-pg2-v16:~# ls -l
+total 5712
+drwxr-xr-x 109 root root    4096 Mar 17 11:31 etc_backup
+-rw-r--r--   1 root root 4676398 Mar 17 12:58 etc_backup.7z
+-rw-r--r--   1 root root  559599 Mar 17 12:56 etc_backup.tar.bz2
+-rw-r--r--   1 root root  594509 Mar 17 12:56 etc_backup.tar.gz
+-rw-r--r--   1 root root    6015 Mar 17 11:10 practice2_part1.log
+root@eltex-practice2-pg2-v16:~#
+Размеры 
+
+18
+root@eltex-practice2-pg2-v16:~# echo "$(date)" >> /etc/motd
+root@eltex-practice2-pg2-v16:~# rsync -a /etc/ /root/etc_backup/
+root@eltex-practice2-pg2-v16:~# tar -czf /root/etc_backup-2.tar.gz -C /root etc_backup
+
+19
+root@eltex-practice2-pg2-v16:~# tar -tjf /root/etc_backup.tar.bz2 | sort > /root/archive_bzip2.txtroot@eltex-practice2-pg2-v16:~# ls -1R /root/etc_backup | sort > /root/etc_backup.txt
+root@eltex-practice2-pg2-v16:~# ls -1R /root/etc_backup | sort > /root/etc_backup.txt
+root@eltex-practice2-pg2-v16:~# diff archive_bzip2.txt etc_backup.txt
+
+20
+root@eltex-practice2-pg2-v16:~# mkdir -p etc_backup_gzip etc_backup_7zip
+root@eltex-practice2-pg2-v16:~# 7z x /root/etc_backup.7z -o/root/etc_backup_7zip
+root@eltex-practice2-pg2-v16:~# tar -xzf /root/etc_backup-2.tar.gz -C /root/etc_backup-2_gzip
+root@eltex-practice2-pg2-v16:~# diff /root/etc_backup-2_gzip/etc_backup/motd /root/etc_backup_7zip/etc_backup/motd
+2d1
+< Mon Mar 17 01:04:07 PM UTC 2025

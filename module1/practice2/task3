@@ -1,0 +1,189 @@
+2
+git config --global user.name BenzinX
+git config --global user.email kleontyev@list.ru
+git config --global init.defaultBranch main
+
+3
+root@eltex-practice2-pg2-v16:~# apt update
+root@eltex-practice2-pg2-v16:~# apt install git gh
+
+
+4
+ssh-keygen -t ed25519 -f ~/.ssh/BenzinX_key
+
+5
+root@eltex-practice2-pg2-v16:~# gh auth login
+? What account do you want to log into? GitHub.com
+? What is your preferred protocol for Git operations on this host? SSH
+? Upload your SSH public key to your GitHub account? /root/.ssh/BenzinX_key.pub
+? Title for your SSH key: : eltex-practice2-pg2-v16
+? How would you like to authenticate GitHub CLI? Login with a web browser
+
+! First copy your one-time code: A385-61F5
+Press Enter to open github.com in your browser...
+! Failed opening a web browser at https://github.com/login/device
+  exec: "xdg-open,x-www-browser,www-browser,wslview": executable file not found in $PATH
+  Please try entering the URL in your browser manually
+✓ Authentication complete.
+- gh config set -h github.com git_protocol ssh
+✓ Configured git protocol
+! Authentication credentials saved in plain text
+✓ Uploaded the SSH key to your GitHub account: /root/.ssh/BenzinX_key.pub
+✓ Logged in as BenzinX
+
+6
+root@eltex-practice2-pg2-v16:~# gh auth setup-git --hostname github.com
+
+7
+root@eltex-practice2-pg2-v16:~# gh auth status
+----------------------------------------------------------------
+github.com
+  ✓ Logged in to github.com account BenzinX (/root/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: ssh
+  - Token: gho_************************************
+  - Token scopes: 'admin:public_key', 'gist', 'read:org', 'repo'
+----------------------------------------------------------------
+
+8
+root@eltex-practice2-pg2-v16:~# gh repo create --public Eltex_School
+✓ Created repository BenzinX/Eltex_School on GitHub
+  https://github.com/BenzinX/Eltex_School
+
+9
+mkdir ~/Eltex_School && cd ~/Eltex_School
+
+nano README.md
+root@eltex-practice2-pg2-v16:~# git init
+Initialized empty Git repository in /root/.git/
+
+root@eltex-practice2-pg2-v16:~# git add README.md
+root@eltex-practice2-pg2-v16:~# git commit -m "first commit"
+[main (root-commit) 529c848] first commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+root@eltex-practice2-pg2-v16:~# git branch -M main
+root@eltex-practice2-pg2-v16:~# git remote add origin https://github.com/BenzinX/Eltex_School
+
+root@eltex-practice2-pg2-v16:~# git status
+----------------------------------------------------------------
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+...
+nothing added to commit but untracked files present (use "git add" to track)
+----------------------------------------------------------------
+
+git push -u origin main
+----------------------------------------------------------------
+root@eltex-practice2-pg2-v16:~# git push -u origin main
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 256 bytes | 256.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/BenzinX/Eltex_School
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+----------------------------------------------------------------
+mkdir -p module1/task1; mkdir module1/task2;mkdir module1/task3
+
+
+eltex-pg2-v16@eltex:~$ scp eltex-pg2-v16_part* root@172.16.9.216:/root/Eltex_School/module1/task1/
+----------------------------------------------------------------
+root@172.16.9.216's password:
+eltex-pg2-v16_part3_gt50M.log                                                                                                                                           100%   55   184.1KB/s   00:00
+eltex-pg2-v16_part3.log                                                                                                                                                 100%  434     1.5MB/s   00:00
+eltex-pg2-v16_part.log
+----------------------------------------------------------------
+
+git add .
+
+git status
+------------------------------------------------------------
+root@eltex-practice2-pg2-v16:~/Eltex_School# git status
+------------------------------------------------------------
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   module1/task1/eltex-pg2-v16_part.log
+        new file:   module1/task1/eltex-pg2-v16_part3.log
+        new file:   module1/task1/eltex-pg2-v16_part3_gt50M.log
+------------------------------------------------------------
+root@eltex-practice2-pg2-v16:~/Eltex_School# git commit -m "Added files from practice 1"
+------------------------------------------------------------
+[main b3cf627] Added files from practice 1
+ 3 files changed, 869 insertions(+)
+ create mode 100644 module1/task1/eltex-pg2-v16_part.log
+ create mode 100644 module1/task1/eltex-pg2-v16_part3.log
+ create mode 100644 module1/task1/eltex-pg2-v16_part3_gt50M.log
+------------------------------------------------------------
+
+git push
+
+root@eltex-practice2-pg2-v16:~/Eltex_School_copy# git clone https://github.com/BenzinX/Eltex_School
+------------------------------------------------------------
+Cloning into 'Eltex_School'...
+remote: Enumerating objects: 54, done.
+remote: Counting objects: 100% (54/54), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 54 (delta 11), reused 34 (delta 7), pack-reused 0 (from 0)
+Receiving objects: 100% (54/54), 12.98 KiB | 144.00 KiB/s, done.
+Resolving deltas: 100% (11/11), done.
+------------------------------------------------------------
+
+
+root@eltex-practice2-pg2-v16:~/Eltex_School/module1/practice2# ls
+zxc.txt
+root@eltex-practice2-pg2-v16:~/Eltex_School/module1/practice2# rm zxc.txt
+
+git add .
+git commit -m "Delete zxc.txt"
+git push
+
+root@eltex-practice2-pg2-v16:~/Eltex_School_copy/Eltex_School# git fetch
+------------------------------------------------------------
+remote: Enumerating objects: 9, done.
+remote: Counting objects: 100% (8/8), done.
+remote: Compressing objects: 100% (4/4), done.
+remote: Total 5 (delta 0), reused 5 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (5/5), 601 bytes | 601.00 KiB/s, done.
+From https://github.com/BenzinX/Eltex_School
+   57edbc3..d01c3ed  main       -> origin/main
+------------------------------------------------------------
+
+root@eltex-practice2-pg2-v16:~/Eltex_School_copy/Eltex_School# git log origin/main
+------------------------------------------------------------
+commit d01c3ed5c3e772837c7ee7f174efd95d89d667fb (origin/main, origin/HEAD)
+Merge: 7377d02 57edbc3
+Author: BenzinX <kleontyev@list.ru>
+Date:   Sat Mar 22 06:55:51 2025 +0000
+
+    Merge branch 'main' of https://github.com/BenzinX/Eltex_School
+
+commit 7377d025b6cc9903992897e6a5f21ad1d4a1da28
+Author: BenzinX <kleontyev@list.ru>
+Date:   Sat Mar 22 06:52:08 2025 +0000
+
+    Delete zxc.txt
+
+commit 57edbc38a5be088d410c62f6e27f29d96d74c954 (HEAD -> main)
+------------------------------------------------------------
+
+root@eltex-practice2-pg2-v16:~/Eltex_School_copy/Eltex_School# git diff main origin/main
+------------------------------------------------------------
+diff --git a/module1/practice2/zxc.txt b/module1/practice2/zxc.txt
+deleted file mode 100644
+index 28ce6a8..0000000
+--- a/module1/practice2/zxc.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-m
+------------------------------------------------------------
+root@eltex-practice2-pg2-v16:~/Eltex_School_copy/Eltex_School# git merge
+---------------------------------------------------------------------------
+Updating 57edbc3..d01c3ed
+Fast-forward
+ module1/practice2/zxc.txt | 1 -
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 module1/practice2/zxc.txt
+---------------------------------------------------------------------------
