@@ -1,0 +1,141 @@
+1
+root@eltex-practice2-pg2-v16:~# su - user1
+-------------------------------------------
+Warning: your password will expire in 1 day.
+-------------------------------------------
+
+2
+user1@eltex-practice2-pg2-v16:~$ ps -eL -o pid= | sort | uniq -c | awk '$1 > 1 {count++} END {print "Processes with multiple threads:", count}'
+-------------------------------------------
+Processes with multiple threads: 10
+-------------------------------------------
+
+3
+--------------------------------------------------------------------------------------
+* PID      = Process Id            SUPGRPS  = Supp Groups Names     %CUU     = CPU Utilization
+* USER     = Effective User Name   TGID     = Thread Group Id       %CUC     = Utilization + child
+* RUSER    = Real User Name        OOMa     = OOMEM Adjustment      nsCGROUP = CGRP namespace Inode
+* PR       = Priority              OOMs     = OOMEM Score current   nsTIME   = TIME namespace Inode
+* NI       = Nice Value            ENVIRON  = Environment vars
+  VIRT     = Virtual Image (KiB)   vMj      = Major Faults delta
+  RES      = Resident Size (KiB)   vMn      = Minor Faults delta
+  SHR      = Shared Memory (KiB)   USED     = Res+Swap Size (KiB)
+* S        = Process Status        nsIPC    = IPC namespace Inode
+* %CPU     = CPU Usage             nsMNT    = MNT namespace Inode
+* %MEM     = Memory Usage (RES)    nsNET    = NET namespace Inode
+* TIME+    = CPU Time, hundredths  nsPID    = PID namespace Inode
+* COMMAND  = Command Name/Line
+
+--------------------------------------------------------------------------------------
+
+4
+user1@eltex-practice2-pg2-v16:~$ passwd
+Changing password for user1.
+-------------------------------------------
+31976 root     user1     20   0 S   0.0   0.1   0:00.00 passwd
+
+5
+user1@eltex-practice2-pg2-v16:~$ kill -15 31976
+user1@eltex-practice2-pg2-v16:~$ ps aux | grep "31976"
+root       31976  0.0  0.0   9172  3712 pts/1    S+   10:12   0:00 passwd
+user1      31979  0.0  0.0   6544  2304 pts/3    S+   10:13   0:00 grep --color=auto 31976
+user1@eltex-practice2-pg2-v16:~$ kill -2 31976
+user1@eltex-practice2-pg2-v16:~$ kill -3 31976
+user1@eltex-practice2-pg2-v16:~$ ps aux | grep "31976"
+root       31976  0.0  0.0   9172  3712 pts/1    S+   10:12   0:00 passwd
+user1      31981  0.0  0.0   6544  2304 pts/3    S+   10:13   0:00 grep --color=auto 31976
+user1@eltex-practice2-pg2-v16:~$ kill -9 31976
+user1@eltex-practice2-pg2-v16:~$ ps aux | grep "31976"
+user1      31983  0.0  0.0   6544  2304 pts/3    S+   10:13   0:00 grep --color=auto 31976
+user1@eltex-practice2-pg2-v16:~$
+
+6
+vim ~/file_task3.txt
+--------------------------------------------------------------------------------------
+[2]+  Stopped                 vim ~/file_task3.txt
+--------------------------------------------------------------------------------------
+7
+user1@eltex-practice2-pg2-v16:~$ sleep 600
+--------------------------------------------------------------------------------------
+^Z
+[3]+  Stopped                 sleep 600
+--------------------------------------------------------------------------------------
+
+user1@eltex-practice2-pg2-v16:~$ jobs
+--------------------------------------------------------------------------------------
+[1]   Stopped                 vim task3_part1.log
+[2]-  Stopped                 vim ~/file_task3.txt
+[3]+  Stopped                 sleep 600
+--------------------------------------------------------------------------------------
+8
+user1@eltex-practice2-pg2-v16:~$ jobs
+--------------------------------------------------------------------------------------
+[1]   Stopped                 vim task3_part1.log
+[2]+  Stopped                 vim ~/file_task3.txt
+[3]-  Stopped                 sleep 600
+[4]   Running                 sleep 600 &
+--------------------------------------------------------------------------------------
+
+9. jobs -l
+--------------------------------------------------------------------------------------
+[1]+ 30237 Stopped                 vim task3_part1.log
+[2]- 30248 Running                 sleep 600 &
+--------------------------------------------------------------------------------------
+
+user1@eltex-practice2-pg2-v16:~$ renice -n 10 32008
+--------------------------------------------------------------------------------------
+
+10
+user1@eltex-practice2-pg2-v16:~$ ps -o pid,ni,comm
+--------------------------------------------------------------------------------------
+    PID  NI COMMAND
+  31965   0 bash
+  31994   0 vim
+  31999   0 vim
+  32008  10 sleep
+  32077   0 sleep
+  32078   0 ps
+--------------------------------------------------------------------------------------
+11
+fg %1
+-------------------------------------------
+"task3_part1.log" [New] 1L, 1B written
+-------------------------------------------
+user1@eltex-practice2-pg2-v16:~$ jobs
+-------------------------------------------
+[2]-  Stopped                 vim ~/file_task3.txt
+[4]   Running                 sleep 600 &
+[5]+  Stopped                 sleep 600
+-------------------------------------------
+
+
+12
+user1@eltex-practice2-pg2-v16:~$ kill -15 32077
+-------------------------------------------
+[4]   Done                    sleep 600
+-------------------------------------------
+user1@eltex-practice2-pg2-v16:~$ jobs
+-------------------------------------------
+[2]-  Stopped                 vim ~/file_task3.txt
+[5]+  Stopped                 sleep 600
+-------------------------------------------
+13
+1.sh:
+-------------------------------------------
+#!/bin/bash
+
+# Устанавливаем ловушку на SIGINT и SIGQUIT
+trap 'echo "Меня голыми руками не возьмёшь!"' SIGINT SIGQUIT
+
+# Бесконечный цикл ожидания
+while true; do
+  sleep 1
+done
+-------------------------------------------
+root@eltex-practice2-pg2-v16:~# nano 1.sh
+root@eltex-practice2-pg2-v16:~# ./1.sh
+-------------------------------------------
+^CМеня голыми руками не возьмёшь!
+^\Quit (core dumped)
+Меня голыми руками не возьмёшь!
+-------------------------------------------
