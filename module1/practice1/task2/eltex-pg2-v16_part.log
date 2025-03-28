@@ -322,19 +322,12 @@ screen -r UserInSystem2
 #1741798662
 export PROMPT_COMMAND='echo "$(date "+%Y-%m-%d %H:%M:%S") $(history 1)" >> ~/eltex-pg2-v16_part.log
 ls
-s
-s
-s
-a
-a
 #1741798736
 echo "zxc"
 #1741798742
 cat eltex-pg2-v16_part.log  | tail -n 5
 #1741798876
 date
-#1741798905
-ды
 #1741798906
 ls
 #1741799011
