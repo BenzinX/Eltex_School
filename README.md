@@ -6,7 +6,7 @@ Repository for storing work from Eltex School
 >> [task 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice1/task3 "Путь к директории в репозитории")  
 
 > [Practice 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2 "Путь к директории в репозитории")  
->> [calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории в репозитории")
+>> [calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории в репозитории")  
 >> [telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone_directory "Путь к директории в репозитории")
 
 > [Practice 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3 "Путь к директории в репозитории")
