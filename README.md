@@ -15,5 +15,5 @@ Repository for storing work from Eltex School
 >> [task 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3/task2 "Пусть к директории")  
 
 ## Module 2 - Objective C:
->> [calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории")  
->> [telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone_directory "Путь к директории")
+> [calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории")  
+> [telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone_directory "Путь к директории")
