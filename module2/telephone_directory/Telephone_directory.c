@@ -13,7 +13,7 @@
 #define MAX_SOCIAL_LEN 100
 #define FILENAME "book.dat"
 
-// Структура для хранения контакта
+// Структура контакта
 typedef struct {
     int id; // Уникальный идентификатор контакта
     char firstName[MAX_NAME_LEN]; // Имя (обязательное поле)
@@ -25,13 +25,12 @@ typedef struct {
     char url[MAX_SOCIAL_LEN]; // Ссылка на соцсеть
 } Contact;
 
-// Структура для хранения таблицы контактов
+// Таблица контактов
 typedef struct {
     Contact contacts[TABLE_SIZE]; // Массив контактов
     int contactCount; // Количество контактов
 } ContactTable;
 
-// Функции для работы с таблицей контактов
 void saveToFile(ContactTable* table);
 void loadFromFile(ContactTable* table);
 void addContact(ContactTable* table);
@@ -50,6 +49,7 @@ int main() {
     Table.contactCount = 0;
     loadFromFile(&Table);
     int _id;
+    outTable(&Table);
     while (1) {
         menuOutput();
         int i;
@@ -314,12 +314,15 @@ int deleteContact(ContactTable* table, int id) {
     }
 
     memset(&table->contacts[index], 0, sizeof(Contact));
-
   
     for (int i = index; i < table->contactCount - 1; i++) {
         table->contacts[i] = table->contacts[i + 1];
     }
     table->contactCount--;
+
+    //Смещение по ID внутри таблицы
+    for (int i = index; i < table->contactCount; i++)   table->contacts[i].id -= 1;
+
     return 1;
 }
 
