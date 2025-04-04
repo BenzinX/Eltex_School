@@ -25,13 +25,13 @@ typedef struct {
 // Узел списка
 typedef struct ContactNode {
     Contact data;
-    struct ContactNode* prev;  // Корректное указание типа
+    struct ContactNode* prev;
     struct ContactNode* next;
-} ContactNode;  // Создаём псевдоним ContactNode для struct ContactNode
+} ContactNode;
 
 // Список
 typedef struct {
-    ContactNode* head;  // Теперь можно использовать ContactNode*
+    ContactNode* head;
     ContactNode* tail;
     int contactCount;
 } ContactList;
