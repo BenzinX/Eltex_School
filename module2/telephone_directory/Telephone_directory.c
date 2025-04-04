@@ -140,20 +140,16 @@ int editContact(ContactTable* table, int id) {
     if (isTableEmpty(table)) return -1;
 
     printf_s("Что вы хотели бы изменить?\n");
-    printf_s("1. Добавить поле\n");
-    printf_s("2. Изменить поле\n");
-    printf_s("3. Удалить поле\n");
+    printf_s("1. Добавить или изменить поле\n");
+    printf_s("2. Удалить поле\n");
     int i;
     scanf_s("%d", &i);
     switch (i)
     {
     case 1:
-        addField(table, id);
-        break;
-    case 2:
         editField(table, id);
         break;
-    case 3:
+    case 2:
         deleteField(table, id);
         break;
     default:
@@ -161,49 +157,6 @@ int editContact(ContactTable* table, int id) {
     }
 
     return 1;
-}
-
-void addField(ContactTable* table, int id) {
-    printf_s("Какое поле вы хотели бы добавить?\n");
-    printf_s("1. Место работы\n");
-    printf_s("2. Номер телефона\n");
-    printf_s("3. Почтовый адрес\n");
-    printf_s("4. Ссылка на социальную сеть\n");
-    int i1;
-    scanf_s("%d", &i1);
-    switch (i1)
-    {
-    case 1:
-        printf_s("Введите место работы: ");
-        char job[MAX_JOB_LEN];
-        scanf_s("%s", &job, MAX_JOB_LEN);
-        strncpy_s(table->contacts[id - 1].job, sizeof(table->contacts[id - 1].job), job, MAX_JOB_LEN);
-        printf_s("Введите должность: ");
-        char position[MAX_JOB_LEN];
-        scanf_s("%s", &position, MAX_JOB_LEN);
-        strncpy_s(table->contacts[id - 1].position, sizeof(table->contacts[id - 1].position), position, MAX_JOB_LEN);
-        break;
-    case 2:
-        printf_s("Введите номер телефона: ");
-        char phoneNumber[MAX_PHONE_LEN];
-        scanf_s("%s", &phoneNumber, MAX_PHONE_LEN);
-        strncpy_s(table->contacts[id - 1].phoneNumber, sizeof(table->contacts[id - 1].phoneNumber), phoneNumber, MAX_PHONE_LEN);
-        break;
-    case 3:
-        printf_s("Введите почтовый адрес: ");
-        char email[MAX_EMAIL_LEN];
-        scanf_s("%s", &email, MAX_EMAIL_LEN);
-        strncpy_s(table->contacts[id - 1].email, sizeof(table->contacts[id - 1].email), email, MAX_EMAIL_LEN);
-        break;
-    case 4:
-        printf_s("Введите ссылку на соцсеть: ");
-        char url[MAX_SOCIAL_LEN];
-        scanf_s("%s", &url, MAX_SOCIAL_LEN);
-        strncpy_s(table->contacts[id - 1].url, sizeof(table->contacts[id - 1].url), url, MAX_SOCIAL_LEN);
-        break;
-    default:
-        break;
-    }
 }
 
 void editField(ContactTable* table, int id) {
@@ -232,31 +185,34 @@ void editField(ContactTable* table, int id) {
         strncpy_s(table->contacts[id - 1].lastName, sizeof(table->contacts[id - 1].lastName), lastName, MAX_NAME_LEN);
         break;
     case 3:
-        printf_s("Введите новое место работы: ");
+        printf_s("Введите место работы: ");
         char job[MAX_JOB_LEN];
         scanf_s("%s", &job, MAX_JOB_LEN);
         strncpy_s(table->contacts[id - 1].job, sizeof(table->contacts[id - 1].job), job, MAX_JOB_LEN);
-        break;
-    case 4:
-        printf_s("Введите новую должность: ");
+        printf_s("Введите должность: ");
         char position[MAX_JOB_LEN];
         scanf_s("%s", &position, MAX_JOB_LEN);
         strncpy_s(table->contacts[id - 1].position, sizeof(table->contacts[id - 1].position), position, MAX_JOB_LEN);
         break;
+    case 4:
+        printf_s("Введите должность: ");
+        scanf_s("%s", &position, MAX_JOB_LEN);
+        strncpy_s(table->contacts[id - 1].position, sizeof(table->contacts[id - 1].position), position, MAX_JOB_LEN);
+        break;
     case 5:
-        printf_s("Введите новый номер телефона: ");
+        printf_s("Введите номер телефона: ");
         char phoneNumber[MAX_PHONE_LEN];
         scanf_s("%s", &phoneNumber, MAX_PHONE_LEN);
         strncpy_s(table->contacts[id - 1].phoneNumber, sizeof(table->contacts[id - 1].phoneNumber), phoneNumber, MAX_PHONE_LEN);
         break;
     case 6:
-        printf_s("Введите новый почтовый адрес: ");
+        printf_s("Введите почтовый адрес: ");
         char email[MAX_EMAIL_LEN];
         scanf_s("%s", &email, MAX_EMAIL_LEN);
         strncpy_s(table->contacts[id - 1].email, sizeof(table->contacts[id - 1].email), email, MAX_EMAIL_LEN);
         break;
     case 7:
-        printf_s("Введите новую ссылку на соцсеть: ");
+        printf_s("Введите ссылку на соцсеть: ");
         char url[MAX_SOCIAL_LEN];
         scanf_s("%s", &url, MAX_SOCIAL_LEN);
         strncpy_s(table->contacts[id - 1].url, sizeof(table->contacts[id - 1].url), url, MAX_SOCIAL_LEN);
