@@ -18,6 +18,6 @@ Repository for storing work from Eltex School
 > [calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории")  
 > [telephone directory 2.1](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%202.1 "Путь к директории")  
 > [ip packet simulator 3.2](https://github.com/BenzinX/Eltex_School/tree/main/module2/ip%20packet%20simulator%203.2 "Путь к директории")  
-> [telephone directory 4.1](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%204.1 "Путь к директории")
-> [prioritized queue 4.2](https://github.com/BenzinX/Eltex_School/tree/main/module2/prioritized%20queue%204.2 "Путь к директории")
+> [telephone directory 4.1](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%204.1 "Путь к директории")  
+> [prioritized queue 4.2](https://github.com/BenzinX/Eltex_School/tree/main/module2/prioritized%20queue%204.2 "Путь к директории")  
 > [telephone directory tree 4.3](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%204.1 "Пусть к директории")  
