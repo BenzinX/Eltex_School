@@ -151,20 +151,45 @@ void addContact(ContactList* list) {
     strncpy_s(newContact->data.email, sizeof(newContact->data.email), "", _TRUNCATE);
     strncpy_s(newContact->data.url, sizeof(newContact->data.url), "", _TRUNCATE);
 
-    // Добавляем в список (в конец)
-    newContact->prev = list->tail;
-    newContact->next = NULL;
+    // Вставка в список по алфавитному порядку фамилий
+    ContactNode* current = list->head;
+    ContactNode* prev = NULL;
 
-    if (list->tail != NULL) {
-        list->tail->next = newContact;
+    // Находим место для вставки
+    while (current != NULL && strcmp(current->data.lastName, lastName) < 0) {
+        prev = current;
+        current = current->next;
+    }
+
+    // Вставляем новый контакт
+    newContact->prev = prev;
+    newContact->next = current;
+
+    if (prev != NULL) {
+        prev->next = newContact;
     }
     else {
-        // Если список был пуст
+        // Вставка в начало списка
         list->head = newContact;
     }
 
-    list->tail = newContact;
+    if (current != NULL) {
+        current->prev = newContact;
+    }
+    else {
+        // Вставка в конец списка
+        list->tail = newContact;
+    }
+
     list->contactCount++;
+
+    // Обновляем ID всех контактов после вставки
+    int id = 1;
+    current = list->head;
+    while (current != NULL) {
+        current->data.id = id++;
+        current = current->next;
+    }
 
     printf_s("Контакт %s %s добавлен\n", newContact->data.firstName, newContact->data.lastName);
 }
@@ -316,7 +341,6 @@ int deleteContact(ContactList* list, int id) {
         current->prev->next = current->next;
     }
     else {
-        // Удаляем голову списка
         list->head = current->next;
     }
 
@@ -324,7 +348,6 @@ int deleteContact(ContactList* list, int id) {
         current->next->prev = current->prev;
     }
     else {
-        // Удаляем хвост списка
         list->tail = current->prev;
     }
 
