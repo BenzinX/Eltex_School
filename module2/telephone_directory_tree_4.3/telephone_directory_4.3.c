@@ -100,7 +100,7 @@ int main() {
 
 // Создание нового узла
 TreeNode* createNode(Contact contact) {
-    TreeNode* node = (TreeNode*)malloc(sizeof(TreeNode));
+    TreeNode* node = malloc(sizeof(TreeNode));
     node->contact = contact;
     node->left = NULL;
     node->right = NULL;
