@@ -352,7 +352,7 @@ void addContact(TreeNode** root) {
     char firstName[MAX_NAME_LEN];
     char lastName[MAX_NAME_LEN];
     printf("Введите имя и фамилию: ");
-    scanf_s("%s %s", firstName, lastName);
+    scanf_s("%s %s", firstName, MAX_NAME_LEN, lastName, MAX_NAME_LEN);
 
     Contact contact;
     contact.id = nextId++;
