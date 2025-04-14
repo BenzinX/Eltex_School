@@ -1,22 +1,3 @@
-   10  ls
-   11  cd ..
-   12  cd ~
-   13  ls -l
-   14  man -Lru man
-   15  export LANG=ru_RU.UTF8
-   16  help
-   17  echo "export LANG=ru_RU.UTF8" >>~/.bashrc
-   18  help
-   19  ls --help
-   20  ls
-   21  w
-   22  whoami
-   23  screen
-   24  screen -ls
-   25  screen -X -S 92051.pts-29.eltex quit
-   26  screen -ls
-   27  screen -X -S 93807.pts-29.eltex quit
-   28  screen -X -S 93130.pts-29.eltex quit
    29  screen -X -S 94130.pts-29.eltex quit
    30  screen -ls
    31  screen -S top
