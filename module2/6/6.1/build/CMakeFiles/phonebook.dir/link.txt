@@ -1,0 +1,1 @@
+/usr/bin/cc CMakeFiles/phonebook.dir/main.c.o -o phonebook  libcontactlist.a 

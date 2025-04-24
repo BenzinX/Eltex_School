@@ -1,0 +1,4 @@
+/home/kirk/kirk/Eltex/6.1/build/CMakeFiles/contactlist.dir
+/home/kirk/kirk/Eltex/6.1/build/CMakeFiles/phonebook.dir
+/home/kirk/kirk/Eltex/6.1/build/CMakeFiles/edit_cache.dir
+/home/kirk/kirk/Eltex/6.1/build/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libcontactlist.a CMakeFiles/contactlist.dir/telephone_directory.c.o
+/usr/bin/ranlib libcontactlist.a
