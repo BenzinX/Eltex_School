@@ -1,0 +1,1 @@
+/usr/bin/cc -fPIC -shared -Wl,-soname,libcontact_list.so -o libcontact_list.so CMakeFiles/contact_list.dir/contact_list.c.o 
