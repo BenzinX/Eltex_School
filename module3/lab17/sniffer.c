@@ -6,18 +6,22 @@
 #include <netinet/udp.h>
 #include <arpa/inet.h>
 #include <time.h>
+#include <signal.h>
 
 #define SNAPLEN 65535
 #define PROMISC 1
 #define TIMEOUT 1000
 
-/* Прототипы функций */
-// Функция для обработки пакетов
+// Глобальные переменные для доступа в обработчике сигнала
+static pcap_t *handle;
+static pcap_dumper_t *dump_file;
+
+// Прототипы функций
 void process_packet(u_char *user, const struct pcap_pkthdr *header, const u_char *packet);
-// Запись перехваченного файла
 void write_to_log(const char *src_ip, uint16_t src_port, 
                  const char *dst_ip, uint16_t dst_port,
                  const char *message, const char *filename);
+void handle_sigint(int sig);
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
@@ -33,89 +37,63 @@ int main(int argc, char *argv[]) {
     }
 
     char errbuf[PCAP_ERRBUF_SIZE];
-    pcap_t *handle;
     struct bpf_program fp;
     char filter_exp[100];
-    sprintf(filter_exp, "udp dst port %d", server_port);
+    snprintf(filter_exp, sizeof(filter_exp), "udp dst port %d", server_port);
 
-    /* 
-     * Открытие сетевого интерфейса для захвата:
-     * pcap_open_live() - основная функция для захвата пакетов
-     * Параметры:
-     *   - имя интерфейса
-     *   - максимальная длина пакета (snaplen)
-     *   - promiscuous mode (1 - включен)
-     *   - timeout в миллисекундах
-     *   - буфер для ошибок
-     */
+    // Открытие сетевого интерфейса для захвата
     handle = pcap_open_live(dev, SNAPLEN, PROMISC, TIMEOUT, errbuf);
     if (!handle) {
         fprintf(stderr, "Ошибка открытия интерфейса %s: %s\n", dev, errbuf);
         exit(1);
     }
 
-    /*
-     * Компиляция BPF фильтра:
-     * pcap_compile() преобразует текстовый фильтр в BPF код
-     * Параметры:
-     *   - handle
-     *   - указатель на структуру bpf_program
-     *   - строка фильтра
-     *   - optimize (0 - выключено)
-     *   - netmask (PCAP_NETMASK_UNKNOWN - неизвестен)
-     */
+    // Компиляция BPF фильтра
     if (pcap_compile(handle, &fp, filter_exp, 0, PCAP_NETMASK_UNKNOWN) == -1) {
         fprintf(stderr, "Ошибка компиляции фильтра: %s\n", pcap_geterr(handle));
         pcap_close(handle);
         exit(1);
     }
 
-    /*
-     * Установка фильтра:
-     * pcap_setfilter() применяет скомпилированный фильтр
-     */
+    // Установка фильтра
     if (pcap_setfilter(handle, &fp) == -1) {
         fprintf(stderr, "Ошибка установки фильтра: %s\n", pcap_geterr(handle));
         pcap_freecode(&fp);
         pcap_close(handle);
         exit(1);
     }
-    pcap_freecode(&fp); // Освобождаем память фильтра
+    pcap_freecode(&fp);
 
-    /*
-     * Открытие файла для сохранения дампа пакетов:
-     * pcap_dump_open() создает файл в формате pcap
-     * Формат pcap поддерживается Wireshark и tcpdump
-     */
-    pcap_dumper_t *dump_file = pcap_dump_open(handle, "sniffed_packets.pcap");
+    // Открытие файла для дампа пакетов
+    dump_file = pcap_dump_open(handle, "sniffed_packets.pcap");
     if (!dump_file) {
         fprintf(stderr, "Ошибка открытия дамп-файла: %s\n", pcap_geterr(handle));
         pcap_close(handle);
         exit(1);
     }
 
+    // Установка обработчика SIGINT
+    signal(SIGINT, handle_sigint);
+
     printf("Сниффер запущен на %s, захват UDP-пакетов на порт %d...\n", dev, server_port);
 
-    /*
-     * Основной цикл захвата пакетов:
-     * pcap_loop() обрабатывает пакеты в бесконечном цикле
-     * Параметры:
-     *   - handle
-     *   - количество пакетов (0 - бесконечно)
-     *   - callback функция для обработки
-     *   - пользовательские данные (передаются в callback)
-     */
+    // Основной цикл захвата пакетов
     pcap_loop(handle, 0, process_packet, (u_char *)dump_file);
 
     // Закрытие ресурсов
     pcap_dump_close(dump_file);
     pcap_close(handle);
+    printf("Сниффер завершён.\n");
     return 0;
 }
 
-/*
- * Функция записи сообщения в лог-файл
- */
+// Обработчик SIGINT для Ctrl+C
+void handle_sigint(int sig) {
+    printf("\nЗавершение работы сниффера...\n");
+    pcap_breakloop(handle); // Прерывает pcap_loop
+}
+
+// Функция записи сообщения в лог-файл
 void write_to_log(const char *src_ip, uint16_t src_port, 
                  const char *dst_ip, uint16_t dst_port,
                  const char *message, const char *filename) {
@@ -123,7 +101,7 @@ void write_to_log(const char *src_ip, uint16_t src_port,
     if (text_file) {
         time_t now = time(NULL);
         char *time_str = ctime(&now);
-        time_str[strlen(time_str)-1] = '\0'; // Удаляем \n
+        time_str[strlen(time_str)-1] = '\0';
         
         fprintf(text_file, "[%s] %s:%d -> %s:%d: %s\n",
                 time_str, src_ip, src_port, dst_ip, dst_port, message);
@@ -141,15 +119,15 @@ void process_packet(u_char *user, const struct pcap_pkthdr *header, const u_char
 
     // Разбираем IP-заголовок (пропускаем Ethernet-заголовок 14 байт)
     ip_header = (struct ip *)(packet + 14);
-    ip_header_len = ip_header->ip_hl * 4; // Длина IP-заголовка в 32-битных словах
+    ip_header_len = ip_header->ip_hl * 4;
 
     // Проверяем, что это UDP-пакет
     if (ip_header->ip_p != IPPROTO_UDP) return;
 
     // Разбираем UDP-заголовок
     udp_header = (struct udphdr *)(packet + 14 + ip_header_len);
-    payload = packet + 14 + ip_header_len + 8; // UDP заголовок всегда 8 байт
-    payload_len = ntohs(udp_header->uh_ulen) - 8; // Длина данных
+    payload = packet + 14 + ip_header_len + 8;
+    payload_len = ntohs(udp_header->uh_ulen) - 8;
 
     // Преобразуем IP-адреса в строки
     char src_ip[INET_ADDRSTRLEN], dst_ip[INET_ADDRSTRLEN];
@@ -169,7 +147,6 @@ void process_packet(u_char *user, const struct pcap_pkthdr *header, const u_char
 
         printf("Сообщение: %s\n", message);
         
-        // Записываем в лог-файл
         write_to_log(src_ip, ntohs(udp_header->uh_sport),
                     dst_ip, ntohs(udp_header->uh_dport),
                     message, "sniffed_messages.txt");
@@ -177,9 +154,6 @@ void process_packet(u_char *user, const struct pcap_pkthdr *header, const u_char
         free(message);
     }
 
-    /*
-     * Запись пакета в дамп-файл:
-     * pcap_dump() сохраняет пакет в файл в формате pcap
-     */
+    // Запись пакета в дамп-файл
     pcap_dump((u_char *)dump_file, header, packet);
 }
