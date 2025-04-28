@@ -7,6 +7,8 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <netdb.h>
+#include <sys/mman.h>
+#include <errno.h>
 
 // Объявления функций
 void error(const char *msg);
@@ -14,12 +16,21 @@ void printusers();
 double calculate(char op, double a, double b);
 void dostuff(int sock);
 
-int nclients = 0;
+// Указатель на разделяемую память для счетчика клиентов
+int *nclients;
 
 int main(int argc, char *argv[]) {
     int sockfd, newsockfd, portno, pid;
     socklen_t clilen;
     struct sockaddr_in serv_addr, cli_addr;
+
+    // Инициализация разделяемой памяти для корректного инкремента числа клиентов(общий счётчик для клиента и сервера)
+    nclients = mmap(NULL, sizeof(int), PROT_READ | PROT_WRITE, 
+                    MAP_SHARED | MAP_ANONYMOUS, -1, 0);
+    if (nclients == MAP_FAILED) {
+        error("ошибка при создании разделяемой памяти");
+    }
+    *nclients = 0; // Инициализация счетчика
 
     printf("TCP Сервер\n");
     if (argc < 2) {
@@ -34,26 +45,24 @@ int main(int argc, char *argv[]) {
     // Инициализация структуры адреса сервера
     bzero((char *)&serv_addr, sizeof(serv_addr));
     portno = atoi(argv[1]);
-    serv_addr.sin_family = AF_INET; // IPv4 протокол
-    serv_addr.sin_addr.s_addr = INADDR_ANY; // Привязка ко всем доступным интерфейсам
-    // Установка порта сервера (конвертация в сетевой порядок байтов)
+    serv_addr.sin_family = AF_INET;
+    serv_addr.sin_addr.s_addr = INADDR_ANY;
     serv_addr.sin_port = htons(portno);
 
     // Привязка сокета к адресу и порту
     if (bind(sockfd, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) < 0)
         error("ошибка при привязке сокета");
 
-    // Ожидание входящих соединений (максимум 5 в очереди)
+    // Ожидание входящих соединений
     listen(sockfd, 5);
     clilen = sizeof(cli_addr);
 
     while (1) {
-        // Принятие входящего соединения от клиента
+        // Принятие входящего соединения
         newsockfd = accept(sockfd, (struct sockaddr *)&cli_addr, &clilen);
         if (newsockfd < 0) error("ошибка при принятии соединения(accept)");
 
         struct hostent *hst;
-        // Получение имени хоста клиента по его IP-адресу
         hst = gethostbyaddr((char *)&cli_addr.sin_addr, 4, AF_INET);
         printf("+%s [%s] новое подключение!\n",
                (hst) ? hst->h_name : "Неизвестный хост",
@@ -62,38 +71,39 @@ int main(int argc, char *argv[]) {
         pid = fork();
         if (pid < 0) error("ошибка при создании дочернего процесса");
         if (pid == 0) {
-            // Закрытие основного сокета в дочернем процессе
+            // Дочерний процесс
             close(sockfd);
-            // Обработка клиентского соединения
             dostuff(newsockfd);
-            // Закрытие клиентского сокета
             close(newsockfd);
             exit(0);
         } else {
-            // Закрытие клиентского сокета в родительском процессе
+            // Родительский процесс
             close(newsockfd);
         }
     }
 
-    // Закрытие основного сокета
+    // Закрытие основного сокета и освобождение памяти
     close(sockfd);
+    munmap(nclients, sizeof(int));
     return 0;
 }
 
-// Функция обработки ошибок при работе с сокетами
+// Функция обработки ошибок
 void error(const char *msg) {
     perror(msg);
     exit(1);
 }
 
+// Вывод количества подключенных пользователей
 void printusers() {
-    if (nclients) {
-        printf("%d пользователь(ей) онлайн\n", nclients);
+    if (*nclients) {
+        printf("%d пользователь(ей) онлайн\n", *nclients);
     } else {
         printf("Нет пользователей онлайн\n");
     }
 }
 
+// Функция вычисления
 double calculate(char op, double a, double b) {
     switch (op) {
         case '+': return a + b;
@@ -109,7 +119,7 @@ double calculate(char op, double a, double b) {
     }
 }
 
-// Функция обработки взаимодействия с клиентом через сокет
+// Функция обработки клиента
 void dostuff(int sock) {
     char buffer[1024];
     int bytes_recv;
@@ -120,12 +130,9 @@ void dostuff(int sock) {
     char client_ip[INET_ADDRSTRLEN];
     char client_hostname[256] = "Неизвестный хост";
 
-    // Получение информации о клиенте (IP-адрес и имя хоста)
+    // Получение информации о клиенте
     if (getpeername(sock, (struct sockaddr*)&cli_addr, &len) == 0) {
-        // Конвертация IP-адреса клиента в строковый формат
         inet_ntop(AF_INET, &cli_addr.sin_addr, client_ip, INET_ADDRSTRLEN);
-        
-        // Получение имени хоста клиента по его IP-адресу
         struct hostent *hst = gethostbyaddr((char *)&cli_addr.sin_addr, 4, AF_INET);
         if (hst) {
             strncpy(client_hostname, hst->h_name, sizeof(client_hostname)-1);
@@ -133,58 +140,58 @@ void dostuff(int sock) {
         }
     }
 
-    nclients++;
+    // Увеличение счетчика клиентов
+    (*nclients)++;
     printusers();
 
     while (1) {
-        // Получение данных от клиента (операция)
+        // Получение операции
         bytes_recv = recv(sock, buffer, sizeof(buffer) - 1, 0);
         if (bytes_recv <= 0) {
-            nclients--;
+            (*nclients)--;
             printf("-%s [%s] отключение\n", client_hostname, client_ip);
             printusers();
             return;
         }
-        buffer[bytes_recv] = 0;
+        buffer[bytes_recv] = '\0';
 
         // Проверка на "exit"
         if (strcmp(buffer, "exit") == 0) {
             bzero(buffer, sizeof(buffer));
             snprintf(buffer, sizeof(buffer), "Удачи");
-            // Отправка сообщения клиенту перед отключением
             send(sock, buffer, strlen(buffer), 0);
-            nclients--;
+            (*nclients)--;
             printf("-%s [%s] отключение\n", client_hostname, client_ip);
             printusers();
             return;
         }
 
-        // Если не "exit", считаем, что это операция
+        // Получение оператора
         op = buffer[0];
 
-        // Получение первого числа от клиента
+        // Получение первого числа
         bytes_recv = recv(sock, buffer, sizeof(buffer) - 1, 0);
         if (bytes_recv <= 0) {
-            nclients--;
+            (*nclients)--;
             printf("-%s [%s] отключение\n", client_hostname, client_ip);
             printusers();
             return;
         }
-        buffer[bytes_recv] = 0;
+        buffer[bytes_recv] = '\0';
         a = atof(buffer);
 
-        // Получение второго числа от клиента
+        // Получение второго числа
         bytes_recv = recv(sock, buffer, sizeof(buffer) - 1, 0);
         if (bytes_recv <= 0) {
-            nclients--;
+            (*nclients)--;
             printf("-%s [%s] отключение\n", client_hostname, client_ip);
             printusers();
             return;
         }
-        buffer[bytes_recv] = 0;
+        buffer[bytes_recv] = '\0';
         b = atof(buffer);
 
-        // Вычисление и отправка результата клиенту
+        // Вычисление и отправка результата
         double result = calculate(op, a, b);
         bzero(buffer, sizeof(buffer));
         snprintf(buffer, sizeof(buffer), "%.2f", result);
