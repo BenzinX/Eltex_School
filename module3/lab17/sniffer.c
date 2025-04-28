@@ -21,7 +21,7 @@ void process_packet(u_char *user, const struct pcap_pkthdr *header, const u_char
 void write_to_log(const char *src_ip, uint16_t src_port, 
                  const char *dst_ip, uint16_t dst_port,
                  const char *message, const char *filename);
-void handle_sigint(int sig);
+void handle_sigint();
 
 int main(int argc, char *argv[]) {
     if (argc != 3) {
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
 }
 
 // Обработчик SIGINT для Ctrl+C
-void handle_sigint(int sig) {
+void handle_sigint() {
     printf("\nЗавершение работы сниффера...\n");
     pcap_breakloop(handle); // Прерывает pcap_loop
 }
