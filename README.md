@@ -6,13 +6,13 @@ Repository for storing work from Eltex School
 >> [task 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice1/task3 "Путь к директории")  
 
 > [Practice 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2 "Путь к директории")  
->> [task 1](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task1 "Пусть к директории")  
->> [task 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task2 "Пусть к директории")  
->> [task 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task2 "Пусть к директории")  
+>> [task 1](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task1 "Путь к директории")  
+>> [task 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task2 "Путь к директории")  
+>> [task 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice2/task2 "Путь к директории")  
 
 > [Practice 3](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3 "Путь к директории")
->> [task 1](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3/task1 "Пусть к директории")  
->> [task 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3/task2 "Пусть к директории")  
+>> [task 1](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3/task1 "Путь к директории")  
+>> [task 2](https://github.com/BenzinX/Eltex_School/tree/main/module1/practice3/task2 "Путь к директории")  
 
 ## Module 2 - Objective C:
 > [Task 2](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории")
@@ -32,4 +32,59 @@ Repository for storing work from Eltex School
 > [Task 6](https://github.com/BenzinX/Eltex_School/tree/main/module2/6 "Путь к директории")
 >> [6.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.1%20telephone%20directory "Путь к директории")  
 >> [6.2 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.2%20telephone%20directory "Путь к директории")  
->> [6.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.3%20calculator "Путь к директории")  
+>> [6.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.3%20calculator "Путь к директории")
+
+## Module 3 - IPC and Network Programming:
+> [Lab 01](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab01 "Путь к директории")
+>> [Processes: Square Area Calculation](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab01 "Путь к директории")
+
+> [Lab 02](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab02 "Путь к директории")
+>> [Processes: Command Interpreter](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab02 "Путь к директории")
+
+> [Lab 03](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab03 "Путь к директории")
+>> [Files: Contact Book with File Storage](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab03 "Путь к директории")
+
+> [Lab 04](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab04 "Путь к директории")
+>> [Pipes: Random Number Exchange](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab04 "Путь к директории")
+
+> [Lab 05](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab05 "Путь к директории")
+>> [Signals: File Access Control](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab05 "Путь к директории")
+
+> [Lab 06](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab06 "Путь к директории")
+>> [System V Message Queues: Chat](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab06 "Путь к директории")
+
+> [Lab 07](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab07 "Путь к директории")
+>> [POSIX Message Queues: Chat](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab07 "Путь к директории")
+
+> [Lab 08](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab08 "Путь к директории")
+>> [System V Semaphores: File Access](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab08 "Путь к директории")
+
+> [Lab 09](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab09 "Путь к директории")
+>> [System V Semaphores: Multiple Readers](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab09 "Путь к директории")
+
+> [Lab 10](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab10 "Путь к директории")
+>> [POSIX Semaphores: File Access](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab10 "Путь к директории")
+
+> [Lab 11](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab11 "Путь к директории")
+>> [POSIX Semaphores: Multiple Readers](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab11 "Путь к директории")
+
+> [Lab 12](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab12 "Путь к директории")
+>> [System V Shared Memory: Min-Max Calculation](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab12 "Путь к директории")
+
+> [Lab 13](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab13 "Путь к директории")
+>> [POSIX Shared Memory: Min-Max Calculation](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab13 "Путь к директории")
+
+> [Lab 14](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab14 "Путь к директории")
+>> [UDP Sockets: Chat](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab14 "Путь к директории")
+
+> [Lab 15](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab15 "Путь к директории")
+>> [TCP Sockets: Calculator](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab15 "Путь к директории")
+
+> [Lab 16](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab16 "Путь к директории")
+>> [TCP Sockets: File Transfer](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab16 "Путь к директории")
+
+> [Lab 17](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab17 "Путь к директории")
+>> [RAW Sockets: Packet Sniffer](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab17 "Путь к директории")
+
+> [Lab 18](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
+>> [Multiplexing: TCP Server](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
