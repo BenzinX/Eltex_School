@@ -18,10 +18,18 @@ Repository for storing work from Eltex School
 > [Task 2](https://github.com/BenzinX/Eltex_School/tree/main/module2/calculator "Путь к директории")
 >> [2.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/2/2.1%20telephone%20directory "Путь к директории")  
 >> [2.2 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/2/2.2%20calculator "Путь к директории")  
->> [2.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/2/2.3%20calculator "Путь к директории")  
+>> [2.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/2/2.3%20calculator "Путь к директории")
+
 > [Task 3](https://github.com/BenzinX/Eltex_School/tree/main/module2/3 "Путь к директории")
->> []
-> [ip packet simulator 3.2](https://github.com/BenzinX/Eltex_School/tree/main/module2/ip%20packet%20simulator%203.2 "Путь к директории")  
-> [telephone directory 4.1](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%204.1 "Путь к директории")  
-> [prioritized queue 4.2](https://github.com/BenzinX/Eltex_School/tree/main/module2/prioritized%20queue%204.2 "Путь к директории")  
-> [telephone directory tree 4.3](https://github.com/BenzinX/Eltex_School/tree/main/module2/telephone%20directory%204.1 "Пусть к директории")  
+>> [3.1 chmod type code](https://github.com/BenzinX/Eltex_School/tree/main/module2/3/3.1%20chmod%20type%20code "Путь к директории")  
+>> [3.2 ip packet simulator](https://github.com/BenzinX/Eltex_School/tree/main/module2/3/3.2%20ip%20packet%20simulator "Путь к директории")
+
+> [Task 4]
+>> [4.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.1%20telephone%20directory "Путь к директории")  
+>> [4.2 prioritized queue](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.2%20prioritized%20queue "Путь к директории")  
+>> [4.3 telephone directory tree](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.3%20telephone%20directory%20tree "Путь к директории")
+
+> [Task 6]
+>> [6.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.1%20telephone%20directory "Путь к директории")  
+>> [6.2 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.2%20telephone%20directory "Путь к директории")  
+>> [6.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.3%20calculator "Путь к директории")  
