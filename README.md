@@ -24,12 +24,12 @@ Repository for storing work from Eltex School
 >> [3.1 chmod type code](https://github.com/BenzinX/Eltex_School/tree/main/module2/3/3.1%20chmod%20type%20code "Путь к директории")  
 >> [3.2 ip packet simulator](https://github.com/BenzinX/Eltex_School/tree/main/module2/3/3.2%20ip%20packet%20simulator "Путь к директории")
 
-> [Task 4]
+> [Task 4](https://github.com/BenzinX/Eltex_School/tree/main/module2/4 "Путь к директории")
 >> [4.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.1%20telephone%20directory "Путь к директории")  
 >> [4.2 prioritized queue](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.2%20prioritized%20queue "Путь к директории")  
 >> [4.3 telephone directory tree](https://github.com/BenzinX/Eltex_School/tree/main/module2/4/4.3%20telephone%20directory%20tree "Путь к директории")
 
-> [Task 6]
+> [Task 6](https://github.com/BenzinX/Eltex_School/tree/main/module2/6 "Путь к директории")
 >> [6.1 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.1%20telephone%20directory "Путь к директории")  
 >> [6.2 telephone directory](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.2%20telephone%20directory "Путь к директории")  
 >> [6.3 calculator](https://github.com/BenzinX/Eltex_School/tree/main/module2/6/6.3%20calculator "Путь к директории")  
