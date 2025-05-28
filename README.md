@@ -91,6 +91,6 @@ Repository for storing work from Eltex School
 
 ## Module 5 - Kernel Development:
 > [Lab 1](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab1)
->> [hello.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/hello.c) - Simple kernel module  
->> [Makefile](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/Makefile) - Build configuration  
->> [lab1.png](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/lab1.png) - Screenshot of working module
+>> [hello.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/hello.c)
+>> [Makefile](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/Makefile)
+>> [lab1.png](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/lab1.png)
