@@ -89,6 +89,28 @@ Repository for storing work from Eltex School
 > [Lab 18](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
 >> [Multiplexing: TCP Server](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
 
+Вот добавленная часть для модуля 4 "Компьютерные сети", оформленная в том же стиле, что и другие модули:
+
+## Module 4 - Computer Networks:
+> [Lab 1](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab1 "Путь к директории")
+>> [Network Basics Configuration](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab1 "Путь к директории")
+
+> [Lab 2](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab2 "Путь к директории")
+>> [lab2.pdf](https://github.com/BenzinX/Eltex_School/blob/main/module4/lab2/lab2.pdf)  
+>> [configs](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab2/configs "Путь к конфигурациям")
+
+> [Lab 3](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab3 "Путь к директории")
+>> [lab3.pdf](https://github.com/BenzinX/Eltex_School/blob/main/module4/lab3/lab3.pdf)  
+>> [configs](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab3/configs "Путь к конфигурациям")
+
+> [Lab 4](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab4 "Путь к директории")
+>> [lab4.pdf](https://github.com/BenzinX/Eltex_School/blob/main/module4/lab4/lab4.pdf)  
+>> [configs](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab4/configs "Путь к конфигурациям")
+
+> [Lab 5](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab5 "Путь к директории")
+>> [lab5.pdf](https://github.com/BenzinX/Eltex_School/blob/main/module4/lab5/lab5.pdf)  
+>> [configs](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab5/configs "Путь к конфигурациям")
+
 ## Module 5 - Kernel Development:
 > [Lab 1](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab1)  
 >> [hello.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab1/hello.c)  
