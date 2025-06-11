@@ -1,0 +1,27 @@
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+O E2 192.168.12.0/24 [110/20] via 192.168.100.1, 00:34:40, FastEthernet0/0
+     192.168.13.0/30 is subnetted, 1 subnets
+O       192.168.13.0 [110/2] via 192.168.100.1, 00:39:52, FastEthernet0/0
+O IA 192.168.31.0/24 [110/3] via 192.168.100.3, 00:34:45, FastEthernet0/0
+     192.168.30.0/30 is subnetted, 1 subnets
+O IA    192.168.30.0 [110/2] via 192.168.100.3, 00:36:30, FastEthernet0/0
+     192.168.24.0/30 is subnetted, 1 subnets
+O       192.168.24.0 [110/3] via 192.168.20.2, 00:36:30, FastEthernet1/0
+O E2 192.168.10.0/24 [110/20] via 192.168.100.1, 00:34:41, FastEthernet0/0
+O E2 192.168.11.0/24 [110/20] via 192.168.100.1, 00:34:41, FastEthernet0/0
+O    192.168.21.0/24 [110/2] via 192.168.20.2, 00:36:32, FastEthernet1/0
+     192.168.20.0/30 is subnetted, 1 subnets
+C       192.168.20.0 is directly connected, FastEthernet1/0
+O    192.168.23.0/24 [110/3] via 192.168.20.2, 00:36:32, FastEthernet1/0
+     192.168.22.0/30 is subnetted, 1 subnets
+O       192.168.22.0 [110/2] via 192.168.20.2, 00:36:32, FastEthernet1/0
+C    192.168.100.0/24 is directly connected, FastEthernet0/0
