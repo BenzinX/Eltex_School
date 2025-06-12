@@ -124,7 +124,7 @@ Repository for storing work from Eltex School
 
 ## Lab 3
 - [Lab 3](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab3)
-- **Описание**: Использование исходников модуля ядра ([исходник 1](https://pastebin.com/r46SDJzs), [исходник 2](https://pastebin.com/qEKTZZcB)) для реализации мигания лампочек на клавиатуре с использованием ioctl.
+- **Описание**: Использование исходников модуля ядра для реализации мигания лампочек на клавиатуре с использованием ioctl.
 - **Содержимое**: Модуль с поддержкой управления светодиодами через ioctl.
 
 ## Lab 4
