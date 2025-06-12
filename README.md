@@ -120,4 +120,24 @@ Repository for storing work from Eltex School
 > [Lab 2](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab2)
 >> [proc.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab2/proc.c)  
 >> [Makefile](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab2/Makefile)  
->> [lab2.jpg](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab2/lab2.jpg)  
+>> [lab2.jpg](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab2/lab2.jpg)
+
+## Lab 3
+- [Lab 3](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab3)
+- **Описание**: Использование исходников модуля ядра ([исходник 1](https://pastebin.com/r46SDJzs), [исходник 2](https://pastebin.com/qEKTZZcB)) для реализации мигания лампочек на клавиатуре с использованием ioctl.
+- **Содержимое**: Модуль с поддержкой управления светодиодами через ioctl.
+
+## Lab 4
+- [Lab 4](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab4)
+  - [chardev.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab4/chardev.c)
+  - [Makefile](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab4/Makefile)
+  - [screen.jpg](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab4/screen.jpg)
+- **Описание**: Модуль ядра для обмена информацией с userspace через character device, адаптированный для версии ядра 6.8.0-60-generic.
+
+## Lab 5
+- [Lab 5](https://github.com/BenzinX/Eltex_School/tree/main/module5/lab5)
+  - [netlink.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab5/netlink.c)
+  - [netlink_test.c](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab5/netlink_test.c)
+  - [Makefile](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab5/Makefile)
+  - [screen.jpg](https://github.com/BenzinX/Eltex_School/blob/main/module5/lab5/screen.jpg)
+- **Описание**: Модуль ядра для обмена информацией с userspace через netlink, адаптированный для версии ядра 6.8.0-60-generic, с поддержкой двустороннего обмена сообщениями.
