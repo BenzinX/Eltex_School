@@ -89,8 +89,6 @@ Repository for storing work from Eltex School
 > [Lab 18](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
 >> [Multiplexing: TCP Server](https://github.com/BenzinX/Eltex_School/tree/main/module3/lab18 "Путь к директории")
 
-Вот добавленная часть для модуля 4 "Компьютерные сети", оформленная в том же стиле, что и другие модули:
-
 ## Module 4 - Computer Networks:
 > [Lab 1](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab1 "Путь к директории")
 >> [Network Basics Configuration](https://github.com/BenzinX/Eltex_School/tree/main/module4/lab1 "Путь к директории")
